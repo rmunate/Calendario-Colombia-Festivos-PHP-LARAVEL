@@ -18,7 +18,7 @@ Casi todos nuestros desarrollos de software en nuestro país tienen que involucr
 -	Trabaja siempre sobre la hora y fecha de Colombia sin importar la configuración del servidor.
 -	Libre y totalmente escalable.
 
-## Installation
+## Instalación
 
 Descargue el contenido del repositorio a su equipo.
 Cree un directorio en la carpeta App de laravel con el nombre *Clases*
@@ -36,7 +36,7 @@ Llamado y uso de Clase
 use App\Clases\CalendarioColombia;
 ```
 
-## Metodos
+## Métodos
 
 Podrá invocar el método que requiera de la clase.
 Listado Actual de Metodos
