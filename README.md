@@ -47,7 +47,7 @@ METODOS PARA USO EN CONTROLADORES
 | ------ | ------ |
 |CalendarioColombia::timezoneSet()   |   Setea la Zona de Tiempo De Bogota Colombia.|
 |CalendarioColombia::holidays([year])    |   Retorna los Festivos de un Año o de Todos los Años Disponibles en la clase.|
-|CalendarioColombia::holidaysMonthYear(mes|año)  |   Retorna los Festivos de un mes y año especifico.|
+|CalendarioColombia::holidaysMonthYear(mes,año)  |   Retorna los Festivos de un mes y año especifico.|
 |CalendarioColombia::isHoliday(fecha)  |   Retorna TRUE si el dia es Festivo.|
 |CalendarioColombia::isMonday(fecha)  |   Retorna TRUE si el dia es Lunes.|
 |CalendarioColombia::isTuesday(fecha)  |   Retorna TRUE si el dia es Martes.|
