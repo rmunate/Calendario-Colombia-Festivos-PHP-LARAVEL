@@ -24,7 +24,7 @@ Descargue el contenido del repositorio a su equipo.
 Cree un directorio en la carpeta App de laravel con el nombre *Clases*
 
 ```sh
-App\Clases\CalendarioColombia.php
+App\Clases\CCOL.php
 ```
 
 Esta carpeta se carga por defecto dentro del Framework, por lo cual podremos llamar la clase en cualquier controlador con total libertad.
@@ -33,7 +33,7 @@ Llamado y uso de Clase
 
 ```sh
 <?php
-use App\Clases\CalendarioColombia;
+use App\Clases\CCOL;
 ```
 
 ## Métodos
@@ -45,36 +45,37 @@ METODOS PARA USO EN CONTROLADORES
 
 | METODO | DESCRIPCIÓN |
 | ------ | ------ |
-|CalendarioColombia::timezoneSet()   |   Setea la Zona de Tiempo De Bogotá Colombia. |
-|CalendarioColombia::holidays([year])    |   Retorna los Festivos de un Año o de Todos los Años Disponibles en la clase. El argumento del método es opcional. Argumento Entero de un solo año ejemplo CalendarioColombia::holidays(2022) |
-|CalendarioColombia::holidaysMonthYear(mes,año)  |   Retorna los Festivos de un mes y año especifico.|
-|CalendarioColombia::isHoliday(fecha)  |   Retorna TRUE si el día es Festivo.|
-|CalendarioColombia::isMonday(fecha)  |   Retorna TRUE si el día es Lunes.|
-|CalendarioColombia::isTuesday(fecha)  |   Retorna TRUE si el día es Martes.|
-|CalendarioColombia::isWednesday(fecha)  |   Retorna TRUE si el día es Miércoles.|
-|CalendarioColombia::isThursday(fecha)  |   Retorna TRUE si el día es Jueves.|
-|CalendarioColombia::isFriday(fecha)  |   Retorna TRUE si el día es Viernes.|
-|CalendarioColombia::isSaturday(fecha)  |   Retorna TRUE si el día es Sábado.|
-|CalendarioColombia::isSunday(fecha)  |   Retorna TRUE si el día es Domingo.|
-|CalendarioColombia::daysFromToday(cantidad)  |   Retorna un arreglo con las fechas de los días hacia adelante o hacia atrás contemplando el día actual. |
-|CalendarioColombia::holidayBetween(inicio,fin)  |   Retorna un arreglo con las fechas festivas entre dos fechas.|
-|CalendarioColombia::daysWorkingMonSatBetween(inicio,fin)  |   Retorna un arreglo con las fechas de los días laborales de lunes a sábado. (Excluyendo Festivos) |
-|CalendarioColombia::daysWorkingMonFriBetween(inicio,fin)  |   Retorna un arreglo con las fechas de los días laborales de lunes a viernes. (Excluyendo Festivos)  |
-|CalendarioColombia::getDayString(fecha)  |   Retorna el número del día conservando el cero al inicio – Retorna String. |
-|CalendarioColombia::getDayName(fecha)  |   Retorna el nombre del día en Español - String.|
-|CalendarioColombia::getDayInt(fecha)  |   Retorna el número del día sin conservar el cero inicial - Integer.|
-|CalendarioColombia::getDayNumberISO(fecha)  |   Retorna el número del día en formato ISO - Integer.|
-|CalendarioColombia::getDayNumber(fecha)  |   Retorna el número del día - Integer.|
-|CalendarioColombia::getDayYear(fecha)  |   Retorna el número del día en el año en formato Entero - Integer.|
-|CalendarioColombia::getWeekISO(fecha)  |   Retorna el número de la semana a la que corresponde la fecha en ISO - Integer.|
-|CalendarioColombia::getMonthName(fecha)  |   Retorna el nombre del mes correspondiente a la fecha en español - String.|
-|CalendarioColombia::getMonthsCollection()  |   Retorna un colección con los doce meses del año en español- collect.|
-|CalendarioColombia::getMonthString(fecha)  |   Retorna el número del mes con el cero al inicio - String.|
-|CalendarioColombia::getMonthInt(fecha)  |   Retorna el número del mes en entero - Integer.|
-|CalendarioColombia::getTimezone(fecha)  |   Permite Validar si la fecha está trabajando con la zona horaria de Colombia.|
-|CalendarioColombia::getTodayArray()  |   Retorna la fecha de hoy, en un arreglo separando año, mes y día.|
-|CalendarioColombia::getYear(fecha)  |   Retorna el número del año en entero - Integer.|
-|CalendarioColombia::getDaysMonth(fecha)  |   Retorna el número de días del mes al que corresponda la fecha ingresada.|
+| CCOL::timezoneSet() | Setea la Zona de Tiempo De Bogota Colombia.|
+| CCOL::holidays([year]) | Retorna todos los festivos de los años disponibles, si se desea, se puede enviar como argumento un año para solo retornar los valores de ese año.|
+| CCOL::holidaysMonthYear(mes|año) | Retorna los Festivos de un mes y año especifico.|
+| CCOL::isHoliday(fecha) | Retorna TRUE si el dia es Festivo.|
+| CCOL::isMonday(fecha) | Retorna TRUE si el dia es Lunes.|
+| CCOL::isTuesday(fecha) | Retorna TRUE si el dia es Martes.|
+| CCOL::isWednesday(fecha) | Retorna TRUE si el dia es Miercoles.|
+| CCOL::isThursday(fecha) | Retorna TRUE si el dia es Jueves.|
+| CCOL::isFriday(fecha) | Retorna TRUE si el dia es Viernes.|
+| CCOL::isSaturday(fecha) | Retorna TRUE si el dia es Sabado.|
+| CCOL::isSunday(fecha) | Retorna TRUE si el dia es Domingo.|
+| CCOL::daysFromToday(cantidad) | Retorna un arreglo con las fechas de los días hacia adelante o hacia atrás.|
+| CCOL::holidayBetween(inicio|fin) | Retorna un arreglo con las fechas festivas entre dos fechas.|
+| CCOL::daysWorkingMonSatBetween(inicio|fin) | Retorna un arreglo con las fechas dias laborales de lunes a sabado.|
+| CCOL::daysWorkingMonFriBetween(inicio|fin) | Retorna un arreglo con las fechas dias laborales de lunes a viernes.|
+| CCOL::getDayString(fecha) | Retorna el número del día conservando el cero al inicio - string.|
+| CCOL::getDayName(fecha) | Retorna el nombre del día en Español - string.|
+| CCOL::getDayInt(fecha) | Retorna el número del día sin conservar el cero inicial - int.|
+| CCOL::getDayNumberISO(fecha) | Retorna el número del día en formato ISO - int.|
+| CCOL::getDayNumber(fecha) | Retorna el número del dia - int.|
+| CCOL::getDayYear(fecha) | Retorna el número del día de la fecha dentro del año en formato Entero - int.|
+| CCOL::getWeekISO(fecha) | Retorna el numero de la semana a la que corresponde la fecha en ISO - int.|
+| CCOL::getMonthName(fecha) | Retorna el nombre del mes correspondiente a la fecha en español - string.|
+| CCOL::getMonthsCollection() | Retorna una colección con los doce meses del año en español- collect.|
+| CCOL::getMonthString(fecha) | Retorna el número del mes con el cero al inicio - string.|
+| CCOL::getMonthInt(fecha) |    Retorna el número del mes en entero - int.|
+| CCOL::getTimezone(fecha) | Permite Validar si la fecha esta trabajando con la zona horaria de colombia.|
+| CCOL::getTodayArray() | Retorna la fecha de hoy, en un arreglo separando año, mes y dia.|
+| CCOL::getYear(fecha) | Retorna el numero del año en entero - int.|
+| CCOL::getDaysMonth(mes|año) | Retorna el número de dias del mes al que corresponda el mes y el año del argumento.|
+| CCOL::dateDiff(fechaInicio|fechaFin|Formato) | Retorna la diferencia entre dos fechas de acuerdo al formato que se le solicite, Formatos Posibles (años, meses, dias, horas, minutos, segundos).|
 
 METODOS PARA MIGRACIONES LARAVEL
 | METODO | DESCRIPCIÓN |
@@ -87,7 +88,7 @@ Código Migración Laravel
 ```sh
 <?php
 
-use App\Clases\CalendarioColombia;
+use App\Clases\CCOL;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -96,12 +97,12 @@ return new class extends Migration
 {
 
     public function up(){
-        CalendarioColombia::SchemaCreate();
+        CCOL::SchemaCreate();
     }
 
 
     public function down(){
-        CalendarioColombia::DropIfExists();
+        CCOL::DropIfExists();
     }
 };
 
@@ -113,14 +114,14 @@ Codigo Seeder Laravel
 
 namespace Database\Seeders;
 
+use App\Clases\CCOL;
 use Illuminate\Database\Seeder;
-use App\Clases\CalendarioColombia;
 use Illuminate\Support\Facades\DB;
 
 class CalendarioSeeder extends Seeder
 {
     public function run(){
-        CalendarioColombia::seeder();
+        CCOL::seeder();
     }
 }
 
@@ -130,7 +131,7 @@ class CalendarioSeeder extends Seeder
 ## Desarrollador
 
 Ingeniero, Raúl Mauricio Uñate Castro
-sacon-raulmauricio@hotmail.com
+raulmauriciounate@gmail.com
 
 ## Licencia
-MIT - En próximas oportunidades se trabajará en su migración a Composer
+MIT
