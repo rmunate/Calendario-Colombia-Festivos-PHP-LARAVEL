@@ -2,13 +2,13 @@
 
 namespace Database\Seeders;
 
+use App\Clases\CCOL;
 use Illuminate\Database\Seeder;
-use App\Clases\CalendarioColombia;
 use Illuminate\Support\Facades\DB;
 
 class CalendarioSeeder extends Seeder
 {
     public function run(){
-        CalendarioColombia::seeder();
+        CCOL::seeder();
     }
 }
