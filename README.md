@@ -47,7 +47,7 @@ METODOS PARA USO EN CONTROLADORES
 | ------ | ------ |
 | CCOL::timezoneSet() | Setea la Zona de Tiempo De Bogota Colombia.|
 | CCOL::holidays([year]) | Retorna todos los festivos de los años disponibles, si se desea, se puede enviar como argumento un año para solo retornar los valores de ese año.|
-| CCOL::holidaysMonthYear(mes|año) | Retorna los Festivos de un mes y año especifico.|
+| CCOL::holidaysMonthYear(mes,año) | Retorna los Festivos de un mes y año especifico.|
 | CCOL::isHoliday(fecha) | Retorna TRUE si el dia es Festivo.|
 | CCOL::isMonday(fecha) | Retorna TRUE si el dia es Lunes.|
 | CCOL::isTuesday(fecha) | Retorna TRUE si el dia es Martes.|
@@ -57,9 +57,9 @@ METODOS PARA USO EN CONTROLADORES
 | CCOL::isSaturday(fecha) | Retorna TRUE si el dia es Sabado.|
 | CCOL::isSunday(fecha) | Retorna TRUE si el dia es Domingo.|
 | CCOL::daysFromToday(cantidad) | Retorna un arreglo con las fechas de los días hacia adelante o hacia atrás.|
-| CCOL::holidayBetween(inicio|fin) | Retorna un arreglo con las fechas festivas entre dos fechas.|
-| CCOL::daysWorkingMonSatBetween(inicio|fin) | Retorna un arreglo con las fechas dias laborales de lunes a sabado.|
-| CCOL::daysWorkingMonFriBetween(inicio|fin) | Retorna un arreglo con las fechas dias laborales de lunes a viernes.|
+| CCOL::holidayBetween(inicio,fin) | Retorna un arreglo con las fechas festivas entre dos fechas.|
+| CCOL::daysWorkingMonSatBetween(inicio,fin) | Retorna un arreglo con las fechas dias laborales de lunes a sabado.|
+| CCOL::daysWorkingMonFriBetween(inicio,fin) | Retorna un arreglo con las fechas dias laborales de lunes a viernes.|
 | CCOL::getDayString(fecha) | Retorna el número del día conservando el cero al inicio - string.|
 | CCOL::getDayName(fecha) | Retorna el nombre del día en Español - string.|
 | CCOL::getDayInt(fecha) | Retorna el número del día sin conservar el cero inicial - int.|
@@ -74,8 +74,8 @@ METODOS PARA USO EN CONTROLADORES
 | CCOL::getTimezone(fecha) | Permite Validar si la fecha esta trabajando con la zona horaria de colombia.|
 | CCOL::getTodayArray() | Retorna la fecha de hoy, en un arreglo separando año, mes y dia.|
 | CCOL::getYear(fecha) | Retorna el numero del año en entero - int.|
-| CCOL::getDaysMonth(mes|año) | Retorna el número de dias del mes al que corresponda el mes y el año del argumento.|
-| CCOL::dateDiff(fechaInicio|fechaFin|Formato) | Retorna la diferencia entre dos fechas de acuerdo al formato que se le solicite, Formatos Posibles (años, meses, dias, horas, minutos, segundos).|
+| CCOL::getDaysMonth(mes,año) | Retorna el número de dias del mes al que corresponda el mes y el año del argumento.|
+| CCOL::dateDiff(fechaInicio,fechaFin,Formato) | Retorna la diferencia entre dos fechas de acuerdo al formato que se le solicite, Formatos Posibles (años, meses, dias, horas, minutos, segundos).|
 
 METODOS PARA MIGRACIONES LARAVEL
 | METODO | DESCRIPCIÓN |
