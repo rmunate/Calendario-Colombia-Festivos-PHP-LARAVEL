@@ -14,7 +14,7 @@ use Illuminate\Database\Migrations\Migration;
  * --------------------------------------------------------------------------
  *
  * Manejo de Festivos
- * Dias Habiles
+ * Dias Habiles.
  * Manejo de Rangos de Fechas
  * Control general del calendario de Colombia a través de los diferentes métodos para conocer
  * la data puntual de los días o fechas por métodos estáticos.
@@ -24,74 +24,63 @@ use Illuminate\Database\Migrations\Migration;
  * --------------------------------------------------------------------------
  *
  * AUTOR: ING. RAUL MAURICIO UÑATE CASTRO
- * FECHA: 25-11-2021
- * V: 1.0.0
+ * V: 1.0.1
  * STATIC::CLASS
  *
  * METODOS USO ESTATICO | COMUNES -------------------------------------------
- *
- * @method  CalendarioColombia::timezoneSet()   |   Setea la Zona de Tiempo De Bogota Colombia.
- * @method  CalendarioColombia::holidays([year])    |   Retorna los Festivos de un Año o de Todos los Años Disponibles en la clase.
- * @method  CalendarioColombia::holidaysMonthYear(mes|año)  |   Retorna los Festivos de un mes y año especifico.
- * @method  CalendarioColombia::isHoliday(fecha)  |   Retorna TRUE si el dia es Festivo.
- * @method  CalendarioColombia::isMonday(fecha)  |   Retorna TRUE si el dia es Lunes.
- * @method  CalendarioColombia::isTuesday(fecha)  |   Retorna TRUE si el dia es Martes.
- * @method  CalendarioColombia::isWednesday(fecha)  |   Retorna TRUE si el dia es Miercoles.
- * @method  CalendarioColombia::isThursday(fecha)  |   Retorna TRUE si el dia es Jueves.
- * @method  CalendarioColombia::isFriday(fecha)  |   Retorna TRUE si el dia es Viernes.
- * @method  CalendarioColombia::isSaturday(fecha)  |   Retorna TRUE si el dia es Sabado.
- * @method  CalendarioColombia::isSunday(fecha)  |   Retorna TRUE si el dia es Domingo.
- * @method  CalendarioColombia::daysFromToday(cantidad)  |   Retorna un arreglo con las fechas de los dias hacia adelante o hacia atras.
- * @method  CalendarioColombia::holidayBetween(inicio|fin)  |   Retorna un arreglo con las fechas festivas entre dos fechas.
- * @method  CalendarioColombia::daysWorkingMonSatBetween(inicio|fin)  |   Retorna un arreglo con las fechas dias laborales de lunes a sabado.
- * @method  CalendarioColombia::daysWorkingMonFriBetween(inicio|fin)  |   Retorna un arreglo con las fechas dias laborales de lunes a viernes.
- * @method  CalendarioColombia::getDayString(fecha)  |   Retorna el numero del dia conservando el cero al inicio - string.
- * @method  CalendarioColombia::getDayName(fecha)  |   Retorna el nombre del dia en Español - string.
- * @method  CalendarioColombia::getDayInt(fecha)  |   Retorna el numero del dia sin conservar el cero inicial - int.
- * @method  CalendarioColombia::getDayNumberISO(fecha)  |   Retorna el numero del dia en formato ISO - int.
- * @method  CalendarioColombia::getDayNumber(fecha)  |   Retorna el numero del dia - int.
- * @method  CalendarioColombia::getDayYear(fecha)  |   Retorna el numero del año en formato Entero - int.
- * @method  CalendarioColombia::getWeekISO(fecha)  |   Retorna el numero de la semana a la que corresponde la fecha en ISO - int.
- * @method  CalendarioColombia::getMonthName(fecha)  |   Retorna el nombre del mes correspondiente a la fecha en español - string.
- * @method  CalendarioColombia::getMonthsCollection()  |   Retorna un coleccion con los doce meses del año en español- collect.
- * @method  CalendarioColombia::getMonthString(fecha)  |   Retorna el numero del mes con el cero al inicio - string.
- * @method  CalendarioColombia::getMonthInt(fecha)  |   Retorna el numero del mes en entero - int.
- * @method  CalendarioColombia::getTimezone(fecha)  |   Permite Validar si la fecha esta trabajando con la zona horaria de colombia.
- * @method  CalendarioColombia::getTodayArray()  |   Retorna la fecha de hoy, en un arreglo separando año, mes y dia.
- * @method  CalendarioColombia::getYear(fecha)  |   Retorna el numero del año en entero - int.
- * @method  CalendarioColombia::getDaysMonth(fecha)  |   Retorna el numero de dias del mes al que corresponda la fecha ingresada.
+ * @method  CCOL::timezoneSet() | Setea la Zona de Tiempo De Bogota Colombia.
+ * @method  CCOL::holidays([year]) | Retorna todos los festivos de los años disponibles, si se desea, se puede enviar como argumento un año para solo retornar los valores de ese año.
+ * @method  CCOL::holidaysMonthYear(mes|año) | Retorna los Festivos de un mes y año especifico.
+ * @method  CCOL::isHoliday(fecha) | Retorna TRUE si el dia es Festivo.
+ * @method  CCOL::isMonday(fecha) | Retorna TRUE si el dia es Lunes.
+ * @method  CCOL::isTuesday(fecha) | Retorna TRUE si el dia es Martes.
+ * @method  CCOL::isWednesday(fecha) | Retorna TRUE si el dia es Miercoles.
+ * @method  CCOL::isThursday(fecha) | Retorna TRUE si el dia es Jueves.
+ * @method  CCOL::isFriday(fecha) | Retorna TRUE si el dia es Viernes.
+ * @method  CCOL::isSaturday(fecha) | Retorna TRUE si el dia es Sabado.
+ * @method  CCOL::isSunday(fecha) | Retorna TRUE si el dia es Domingo.
+ * @method  CCOL::daysFromToday(cantidad) | Retorna un arreglo con las fechas de los días hacia adelante o hacia atrás.
+ * @method  CCOL::holidayBetween(inicio|fin) | Retorna un arreglo con las fechas festivas entre dos fechas.
+ * @method  CCOL::daysWorkingMonSatBetween(inicio|fin) | Retorna un arreglo con las fechas dias laborales de lunes a sabado.
+ * @method  CCOL::daysWorkingMonFriBetween(inicio|fin) | Retorna un arreglo con las fechas dias laborales de lunes a viernes.
+ * @method  CCOL::getDayString(fecha) | Retorna el número del día conservando el cero al inicio - string.
+ * @method  CCOL::getDayName(fecha) | Retorna el nombre del día en Español - string.
+ * @method  CCOL::getDayInt(fecha) | Retorna el número del día sin conservar el cero inicial - int.
+ * @method  CCOL::getDayNumberISO(fecha) | Retorna el número del día en formato ISO - int.
+ * @method  CCOL::getDayNumber(fecha) | Retorna el número del dia - int.
+ * @method  CCOL::getDayYear(fecha) | Retorna el número del día de la fecha dentro del año en formato Entero - int.
+ * @method  CCOL::getWeekISO(fecha) | Retorna el numero de la semana a la que corresponde la fecha en ISO - int.
+ * @method  CCOL::getMonthName(fecha) | Retorna el nombre del mes correspondiente a la fecha en español - string.
+ * @method  CCOL::getMonthsCollection() | Retorna una colección con los doce meses del año en español- collect.
+ * @method  CCOL::getMonthString(fecha) | Retorna el número del mes con el cero al inicio - string.
+ * @method  CCOL::getMonthInt(fecha) |    Retorna el número del mes en entero - int.
+ * @method  CCOL::getTimezone(fecha) | Permite Validar si la fecha esta trabajando con la zona horaria de colombia.
+ * @method  CCOL::getTodayArray() | Retorna la fecha de hoy, en un arreglo separando año, mes y dia.
+ * @method  CCOL::getYear(fecha) | Retorna el numero del año en entero - int.
+ * @method  CCOL::getDaysMonth(mes|año) | Retorna el número de dias del mes al que corresponda el mes y el año del argumento.
+ * @method  CCOL::dateDiff(fechaInicio|fechaFin|Formato) | Retorna la diferencia entre dos fechas de acuerdo al formato que se le solicite, Formatos Posibles (años, meses, dias, horas, minutos, segundos).
  *
  * METODOS USO ESTATICO | MIGRACIONES LARAVEL -------------------------------
- *
- * @method  CalendarioColombia::SchemaCreate()  |   Metodo para invocar en el up() de la migracion.
- * Codigo: public function up(){CalendarioColombia::SchemaCreate();}
- *
- * @method  CalendarioColombia::DropIfExists()  |   Metodo para invocar en el down() de la migracion.
- * Codigo: public function down(){CalendarioColombia::DropIfExists();}
- *
- * @method  CalendarioColombia::seeder()  |   Metodo para invocar en run() del Seeder.
- * Codigo: public function run(){CalendarioColombia::seeder();}
- *
+ * @method  CCOL::SchemaCreate() | Metodo para invocar en el up() de la migracion.
+ * @method  CCOL::DropIfExists() | Metodo para invocar en el down() de la migracion.
+ * @method  CCOL::seeder() | Metodo para invocar en run() del Seeder.
  */
 
-class CalendarioColombia {
+class CCOL {
 
     /**
-     * Setea el la zona de tiempo.
+     * Setea la zona de tiempo.
      * Este Metodo se invoca en los otros metodos para garantizar el calculo tiempos solo en Colombia.
-     *
-     * @return NULL
+     * @return Void
      */
     public static function timezoneSet($zona = "America/Bogota"){
         date_default_timezone_set($zona);
     }
 
-
     /**
      * Definición de Arreglos de Dias Festivos
      * Este Metodo debe tener un arreglo principal por año el cual contenga la data de los dias Festivos.
-     *
-     * @return ARRAY
+     * @return Array
      */
     public static function holidays($year = null){
 
@@ -175,8 +164,7 @@ class CalendarioColombia {
     /**
      * Consulta de Dias Festivos de un Mes y Año Especifico.
      * Este Metodo debe tener un arreglo principal por año el cual contenga la data de los dias Festivos.
-     *
-     * @return ARRAY
+     * @return Array
      */
     public static function holidaysMonthYear(int $mes,int $year){
 
@@ -214,8 +202,7 @@ class CalendarioColombia {
 
     /**
      * Valida si un dia es festivo (Domingo o Feriado)
-     *
-     * @return BOOL
+     * @return Bool
      */
     public static function isHoliday(string $fecha){
 
@@ -227,8 +214,7 @@ class CalendarioColombia {
 
     /**
      * Valida si un dia es Lunes
-     *
-     * @return BOOL
+     * @return Bool
      */
     public static function isMonday(string $fecha){
 
@@ -246,8 +232,7 @@ class CalendarioColombia {
 
     /**
      * Valida si un dia es Martes
-     *
-     * @return BOOL
+     * @return Bool
      */
     public static function isTuesday(string $fecha){
 
@@ -265,8 +250,7 @@ class CalendarioColombia {
 
     /**
      * Valida si un dia es Miercoles
-     *
-     * @return BOOL
+     * @return Bool
      */
     public static function isWednesday(string $fecha){
 
@@ -284,8 +268,7 @@ class CalendarioColombia {
 
     /**
      * Valida si un dia es Jueves
-     *
-     * @return BOOL
+     * @return Bool
      */
     public static function isThursday(string $fecha){
 
@@ -303,8 +286,7 @@ class CalendarioColombia {
 
     /**
      * Valida si un dia es Viernes
-     *
-     * @return BOOL
+     * @return Bool
      */
     public static function isFriday(string $fecha){
 
@@ -322,8 +304,7 @@ class CalendarioColombia {
 
     /**
      * Valida si un dia es Sabado
-     *
-     * @return BOOL
+     * @return Bool
      */
     public static function isSaturday(string $fecha){
 
@@ -341,8 +322,7 @@ class CalendarioColombia {
 
     /**
      * Valida si un dia es Domingo
-     *
-     * @return BOOL
+     * @return Bool
      */
     public static function isSunday(string $fecha){
 
@@ -361,8 +341,7 @@ class CalendarioColombia {
     /**
      * Retorna un Arreglo con los dias hacia adelante o hacia atras del dia en curso
      * Contempla el dia en curso
-     *
-     * @return ARRAY
+     * @return Array
      */
     public static function daysFromToday($cantidad){
 
@@ -396,8 +375,7 @@ class CalendarioColombia {
 
     /**
      * Retorna un Arreglo con las fechas de dias festivos entre dos fechas.
-     *
-     * @return ARRAY
+     * @return Array
      */
     public static function holidayBetween(string $inicio, string $fin){
 
@@ -420,8 +398,7 @@ class CalendarioColombia {
     /**
      * Retorna un Arreglo con las fechas de dias laborales, excluyendo Domingo y festivos.
      * Calcula de Lunes a Sabado (Contratos Comunes Colombia)
-     *
-     * @return ARRAY
+     * @return Array
      */
     public static function daysWorkingMonSatBetween(string $inicio, string $fin){
 
@@ -445,9 +422,8 @@ class CalendarioColombia {
 
     /**
      * Retorna un Arreglo con las fechas de dias laborales, excluyendo Sabados, Domingo y festivos.
-     * Calcula de Lunes a Sabado (Contratos Comunes Colombia)
-     *
-     * @return ARRAY
+     * Calcula de Lunes a Viernes (Contratos Comunes Colombia)
+     * @return Array
      */
     public static function daysWorkingMonFriBetween(string $inicio, string $fin){
 
@@ -471,8 +447,7 @@ class CalendarioColombia {
 
     /**
      * Retorna el numero del dia en string conservando el cero al inicio
-     *
-     * @return STRING
+     * @return String
      */
     public static function getDayString(string $fecha){
 
@@ -485,8 +460,7 @@ class CalendarioColombia {
 
     /**
      * Retorna el nombre del dia en Español
-     *
-     * @return STRING
+     * @return String
      */
     public static function getDayName(string $fecha){
 
@@ -504,7 +478,7 @@ class CalendarioColombia {
                 return "Martes";
                 break;
             case 3:
-                return "Miercoles";
+                return "Miércoles";
                 break;
             case 4:
                 return "Jueves";
@@ -513,15 +487,14 @@ class CalendarioColombia {
                 return "Viernes";
                 break;
             case 6:
-                return "Sabado";
+                return "Sábado";
                 break;
         }
     }
 
     /**
      * Retorna el numero del dia en formato numero.
-     *
-     * @return INT
+     * @return Int
      */
     public static function getDayInt(string $fecha){
 
@@ -534,8 +507,7 @@ class CalendarioColombia {
 
     /**
      * Retorna el numero del dia en formato ISO.
-     *
-     * @return INT
+     * @return Int
      */
     public static function getDayNumberISO(string $fecha){
 
@@ -547,8 +519,7 @@ class CalendarioColombia {
 
     /**
      * Extrae el numero del dia en formato entero
-     *
-     * @return INT
+     * @return Int
      */
     public static function getDayNumber(string $fecha){
 
@@ -561,8 +532,7 @@ class CalendarioColombia {
 
     /**
      * Extrae el numero del año en formato entero
-     *
-     * @return INT
+     * @return Int
      */
     public static function getDayYear(string $fecha){
 
@@ -575,8 +545,7 @@ class CalendarioColombia {
 
     /**
      * Obtener el numero de la semana en el año en Formato ISO
-     *
-     * @return INT
+     * @return Int
      */
     public static function getWeekISO(string $fecha){
 
@@ -588,9 +557,8 @@ class CalendarioColombia {
     }
 
     /**
-     * Obtener el nombre del mes en español
-     *
-     * @return STRING
+     * Obtener el nombre del mes en Español
+     * @return String
      */
     public static function getMonthName(string $fecha){
 
@@ -637,8 +605,7 @@ class CalendarioColombia {
 
     /**
      * Retorna una coleccion con los 12 meses del año en español.
-     *
-     * @return COLLECT
+     * @return Collect
      */
     public static function getMonthsCollection(){
         $months = collect([
@@ -660,8 +627,7 @@ class CalendarioColombia {
 
     /**
      * Obteber el mes en string con cero al inicio.
-     *
-     * @return STRING
+     * @return String
      */
     public static function getMonthString(string $fecha){
 
@@ -673,8 +639,7 @@ class CalendarioColombia {
 
     /**
      * Obteber el mes en INT
-     *
-     * @return INT
+     * @return Int
      */
     public static function getMonthInt(string $fecha){
 
@@ -685,8 +650,7 @@ class CalendarioColombia {
 
     /**
      * Permite comprobar si la fecha esta trabajando con la zona de tiempo de Colombia
-     *
-     * @return STRING
+     * @return String
      */
     public static function getTimezone(string $fecha){
 
@@ -697,8 +661,7 @@ class CalendarioColombia {
 
     /**
      * Retorna la fecha de hoy separo el dia el mes y el año.
-     *
-     * @return ARRAY
+     * @return Array
      */
     public static function getTodayArray(){
 
@@ -715,8 +678,7 @@ class CalendarioColombia {
 
     /**
      * Retorna el año.
-     *
-     * @return ARRAY
+     * @return Int
      */
     public static function getYear(string $fecha){
 
@@ -727,97 +689,131 @@ class CalendarioColombia {
     }
 
     /**
-     * Retorna el año.
-     *
-     * @return INT
+     * Retorna los dias del mes correspondiente al mes y año.
+     * @return Int
      */
-    public static function getDaysMonth(string $fecha){
+    public static function getDaysMonth($month,$year){
 
         Self::timezoneSet();
-        $date = strtotime($fecha);
+
+        /* Mes */
+        $lg = strlen($month);
+        if ($lg >= 3) {
+            return null;
+        } elseif ($lg == 2) {
+            $month = strval($mes);
+        } elseif ($lg == 1) {
+            $month = "0" . strval($mes);
+        }
+
+        /* Calculo */
+        $date = date('Y-m-d', strtotime($year.'-'.$month.'-01'));
+        $date = strtotime($date);
         $response = date('t', $date);
+
         return $response;
+
+    }
+
+
+    /**
+     * Diferencia en fechas.
+     * @return Int
+     */
+    public static function dateDiff(string $fecha1, string $fecha2, string $formato){
+
+        $formatos = [
+            /* Lenguaje Español */
+            'años' => '%y',
+            'meses' => '%m',
+            'dias' => '%d',
+            'horas' => '%h',
+            'minutos' => '%i',
+            'segundos' => '%s',
+            /* Valores Date */
+            'y' => '%y',
+            'm' => '%m',
+            'd' => '%d',
+            'h' => '%h',
+            'm' => '%i',
+            's' => '%s',
+        ];
+
+        /* Tiempo de Colombia */
+        Self::timezoneSet();
+
+        /* Validacion Diferencia */
+        $datetime1 = date_create($fecha1);
+        $datetime2 = date_create($fecha2);
+        $contador = date_diff($datetime1, $datetime2);
+        $differenceFormat = $formatos[$formato];
+        $diff = $contador->format($differenceFormat);
+
+        return $diff;
     }
 
     /**
      * Retorna los datos para la migracion de Laravel.
-     *
-     * @return MIGRATION
+     * @return Schema::create
      */
     public static function  SchemaCreate(){
-        return Schema::create('calendario_co', function (Blueprint $table) {
+        return Schema::create('colombian_calendar', function (Blueprint $table) {
             $table->id();
-            $table->date('fecha');
-            $table->integer('ano');
-            $table->integer('mes');
-            $table->integer('dia');
-            $table->integer('semana_iso');
-            $table->integer('numero_dia_semana');
-            $table->string('dia_nombre');
-            $table->string('mes_nombre');
-            $table->integer('festivo')->nullable();
+            $table->date('date');
+            $table->integer('year');
+            $table->integer('month');
+            $table->integer('day');
+            $table->integer('week_iso');
+            $table->integer('number_day_week');
+            $table->string('name_day');
+            $table->string('name_month');
+            $table->integer('hollyday')->nullable();
         });
     }
 
+    /**
+     * Retorna los datos para la migracion de Laravel.
+     * @return Schema::dropIfExists
+     */
     public static function  DropIfExists(){
-        return Schema::dropIfExists('calendario_co');
+        return Schema::dropIfExists('colombian_calendar');
     }
 
     /**
      * Retorna los datos para el Seeder de Laravel.
-     *
-     * @return SEEDER
+     * @return Seeder
      */
     public static function seeder(){
 
+        /* Festivos Dispoibles en Clase */
         $data = Self::holidays();
+
+        /* Fechas de Inicio y Fin */
         $inicio = array_key_first($data) . "-01-01";
         $fin    = array_key_last($data)  . "-12-31";
 
+        /* Invocación Clase DataTime */
         $comienzo = new DateTime($inicio);
         $final = new DateTime($fin);
 
-        // Desactivamos la revisión de claves foráneas
-        DB::statement('SET FOREIGN_KEY_CHECKS = 0;');
-
-        $dataCalendario = [];
         for($i = $comienzo; $i <= $final; $i->modify('+1 day')){
 
             $dateIteracion = $i->format("Y-m-d");
 
-            $netsData["id"]                 =  null;
-            $netsData["fecha"]              =  $dateIteracion;
-            $netsData["ano"]                =  Self::getYear($dateIteracion);
-            $netsData["mes"]                =  Self::getMonthInt($dateIteracion);
-            $netsData["dia"]                =  Self::getDayInt($dateIteracion);
-            $netsData["semana_iso"]         =  Self::getWeekISO($dateIteracion);
-            $netsData["numero_dia_semana"]  =  Self::getDayNumber($dateIteracion);
-            $netsData["dia_nombre"]         =  Self::getDayName($dateIteracion);
-            $netsData["mes_nombre"]         =  Self::getMonthName($dateIteracion);
-            $netsData["festivo"]            =  Self::isHoliday($dateIteracion) == true ? 1 : 0;
-
-            array_push($dataCalendario, $netsData);
-        }
-
-        // Codigo Tabla.
-        foreach ($dataCalendario as $index => $dia) {
-
-            DB::table('calendario_co')->insert([
-                "id" =>  $dia["id"],
-                "fecha" => $dia["fecha"],
-                "ano" => $dia["ano"],
-                "mes" => $dia["mes"],
-                "dia" => $dia["dia"],
-                "semana_iso" => $dia["semana_iso"],
-                "numero_dia_semana" => $dia["numero_dia_semana"],
-                "dia_nombre" => $dia["dia_nombre"],
-                "mes_nombre" => $dia["mes_nombre"],
-                "festivo" => $dia["festivo"]
+            DB::table('colombian_calendar')->insert([
+                "id" => null,
+                "date" => $dateIteracion,
+                "year" => Self::getYear($dateIteracion),
+                "month" => Self::getMonthInt($dateIteracion),
+                "day" => Self::getDayInt($dateIteracion),
+                "week_iso" => Self::getWeekISO($dateIteracion),
+                "number_day_week" => Self::getDayNumber($dateIteracion),
+                "name_day" => Self::getDayName($dateIteracion),
+                "name_month" => Self::getMonthName($dateIteracion),
+                "hollyday" => Self::isHoliday($dateIteracion) == true ? 1 : 0
             ]);
-        }
 
-        // Reactivamos la revisión de claves foráneas
-        DB::statement('SET FOREIGN_KEY_CHECKS = 1;');
+        }
 
     }
 
